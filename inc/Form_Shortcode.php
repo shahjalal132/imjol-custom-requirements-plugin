@@ -304,7 +304,7 @@ function imjol_contact_form_callback() {
                                                                         <div class="col-lg-6 col-md-6">
                                                                             <div class="form-group">
                                                                                 <div class="formify-forms__input">
-                                                                                    <label>First Name <span>*</span></label>
+                                                                                    <label>Full Name <span>*</span></label>
                                                                                     <input type="text" name="first-name"
                                                                                         placeholder="Enter name here"
                                                                                         required="required">

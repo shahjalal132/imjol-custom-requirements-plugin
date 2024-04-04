@@ -4,14 +4,16 @@ global $wpdb;
 
 $all_data = $_POST;
 
-$software       = isset( $all_data['software'] ) ? $all_data['software'] : null;
+$software       = isset( $all_data['software'] ) ? $all_data['software'] : '';
 $software_value = isset( $software ) ? 1 : 0;
 
-$website       = isset( $all_data['website'] ) ? $all_data['website'] : null;
+$website       = isset( $all_data['website'] ) ? $all_data['website'] : '';
 $website_value = isset( $website ) ? 1 : 0;
 
-$mobile_app       = isset( $all_data['mobileApp'] ) ? $all_data['mobileApp'] : null;
+$mobile_app       = isset( $all_data['mobileApp'] ) ? $all_data['mobileApp'] : '';
 $mobile_app_value = isset( $mobile_app ) ? 1 : 0;
+
+$service = $software . ' ' . $website . ' ' . $mobile_app;
 
 $customBudget   = isset( $all_data['customBudget'] ) ? $all_data['customBudget'] : null;
 $select_budget  = isset( $all_data['budget'] ) ? $all_data['budget'] : null;
@@ -48,10 +50,11 @@ $watsAppNumber = isset( $all_data['watsAppNumber'] ) ? $all_data['watsAppNumber'
 // Get the admin username dynamically
 $admin_users    = get_users( array( 'role' => 'administrator' ) );
 $admin_username = !empty( $admin_users ) ? $admin_users[0]->user_login : 'Admin';
+$site_name      = get_bloginfo( 'name' );
 
 // Get the admin email dynamically
-// $admin_email = get_option( 'admin_email' );
-$admin_email = 'rjshahjalal1010@gmail.com';
+$admin_email = get_option( 'admin_email' );
+// $admin_email = 'rjshahjalal1010@gmail.com';
 
 $data = [
     'first_name'  => $first_name,
@@ -130,6 +133,7 @@ if ( !empty( $first_name ) ) {
             <div class='container'>
                 <div class='logo'>
                     <img src='https://courselms.imjol.com/wp-content/uploads/2019/09/course-lms-logo.png' alt='Your Company Logo'>
+                    <p>$first_name has submitted a form requesting custom development on the $site_name</p>
                 </div>
                 <table>
                     <tr>
@@ -143,6 +147,18 @@ if ( !empty( $first_name ) ) {
                     <tr>
                         <td>Address:</td>
                         <td>$address</td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td>$number</td>
+                    </tr>
+                    <tr>
+                        <td>What's app Number:</td>
+                        <td>$watsAppNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Service:</td>
+                        <td>$service</td>
                     </tr>
                     <tr>
                         <td>Requirement:</td>
