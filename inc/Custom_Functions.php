@@ -106,7 +106,7 @@ function show_all_user_infos() {
                         <th scope="col">Mobile App</th>
                         <th scope="col">Website</th>
                         <th scope="col">Software</th>
-                        <th scope="col">Requirements</th>
+                        <th scope="col">Requirement</th>
                         <th scope="col">Budget</th>
                         <th scope="col">Deadline</th>
                         <th scope="col">Action</th>
